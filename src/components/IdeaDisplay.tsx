@@ -60,36 +60,36 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
         return (
           <Box 
             key={index} 
-            bg="gray.800" 
-            p={8} 
+            className="idea-box"
             borderRadius="xl" 
             boxShadow="lg"
-            borderLeft="2px solid" 
-            borderColor="brand.500"
             transition="all 0.3s ease-in-out"
             _hover={{ transform: 'translateY(-5px)', boxShadow: '2xl' }}
+            overflow="hidden"
           >
-            <Flex align="center" mb={4}>
-              <Badge colorScheme="brand" fontSize="0.8em" mr={2} fontWeight="300">
-                {index + 1}
-              </Badge>
-              <Heading as="h4" size="lg" color="brand.300" fontWeight="100">
-                {title}
-              </Heading>
-            </Flex>
-            {content.length > 1 ? (
-              <UnorderedList spacing={2}>
-                {content.map((item, i) => (
-                  <ListItem key={i} fontSize="md" color="gray.300" fontWeight="300">
-                    {item.replace('- ', '')}
-                  </ListItem>
-                ))}
-              </UnorderedList>
-            ) : (
-              <Text fontSize="lg" fontStyle="italic" color="gray.300" fontWeight="300">
-                {content[0]}
-              </Text>
-            )}
+            <Box className="idea-box-content" p={8}>
+              <Flex align="center" mb={4}>
+                <Badge colorScheme="brand" fontSize="0.8em" mr={2} fontWeight="300">
+                  {index + 1}
+                </Badge>
+                <Heading as="h4" size="lg" color="brand.300" fontWeight="100">
+                  {title}
+                </Heading>
+              </Flex>
+              {content.length > 1 ? (
+                <UnorderedList spacing={2}>
+                  {content.map((item, i) => (
+                    <ListItem key={i} fontSize="md" color="gray.300" fontWeight="300">
+                      {item.replace('- ', '')}
+                    </ListItem>
+                  ))}
+                </UnorderedList>
+              ) : (
+                <Text fontSize="lg" fontStyle="italic" color="gray.300" fontWeight="300">
+                  {content[0]}
+                </Text>
+              )}
+            </Box>
           </Box>
         )
       })}
