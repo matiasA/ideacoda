@@ -69,6 +69,6 @@ Este proyecto está bajo la Licencia MIT.
 
 ## 📞 Contacto
 
-[Tu Nombre] - [@tu_twitter](https://twitter.com/tu_twitter) - tu_email@ejemplo.com
+[Cristian Aracena](https://www.linkedin.com/in/matias-aracena/) - [contacto](https://www.linkedin.com/in/matias-aracena/) - info@coda.uno
 
-Link del Proyecto: [https://github.com/tu-usuario/generador-ideas-negocio-ia](https://github.com/tu-usuario/generador-ideas-negocio-ia)
+Link del Proyecto: [https://github.com/matiasA/ideacoda](https://github.com/matiasA/ideacoda)
