@@ -1,7 +1,7 @@
 
 # 🚀 Generador de Ideas de Negocio con IA
 
-[Generador de Ideas de Negocio con IA](https://github.com/user-attachments/assets/a60091ea-3655-415e-8f9c-79f52d9bf160)
+[Generador de Ideas de Negocio con IA](./assets/app.png)
 
 ## 🌟 Descripción
 
