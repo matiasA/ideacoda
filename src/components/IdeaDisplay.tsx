@@ -43,15 +43,15 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
   }
 
   return (
-    <VStack mt={8} spacing={8} align="stretch">
-      <Heading as="h3" size="xl" textAlign="center" color="brand.300">
+    <VStack mt={12} spacing={8} align="stretch">
+      <Heading as="h3" size="2xl" textAlign="center" color="brand.300" fontWeight="100" letterSpacing="wider">
         Tu Idea de Negocio Innovadora
       </Heading>
       <HStack justifyContent="center" spacing={4}>
-        <Button leftIcon={<FaShare />} colorScheme="blue" onClick={handleShare}>
+        <Button leftIcon={<FaShare />} colorScheme="blue" onClick={handleShare} fontWeight="300">
           Compartir
         </Button>
-        <Button leftIcon={<FaSave />} colorScheme="green" onClick={handleSave}>
+        <Button leftIcon={<FaSave />} colorScheme="green" onClick={handleSave} fontWeight="300">
           Guardar
         </Button>
       </HStack>
@@ -60,39 +60,51 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
         return (
           <Box 
             key={index} 
-            bg="gray.700" 
-            p={6} 
-            borderRadius="lg" 
-            boxShadow="xl"
-            borderLeft="8px solid" 
+            bg="gray.800" 
+            p={8} 
+            borderRadius="xl" 
+            boxShadow="lg"
+            borderLeft="2px solid" 
             borderColor="brand.500"
-            transition="all 0.3s"
+            transition="all 0.3s ease-in-out"
             _hover={{ transform: 'translateY(-5px)', boxShadow: '2xl' }}
           >
             <Flex align="center" mb={4}>
-              <Badge colorScheme="brand" fontSize="0.8em" mr={2}>
+              <Badge colorScheme="brand" fontSize="0.8em" mr={2} fontWeight="300">
                 {index + 1}
               </Badge>
-              <Heading as="h4" size="md" color="brand.300">
+              <Heading as="h4" size="lg" color="brand.300" fontWeight="100">
                 {title}
               </Heading>
             </Flex>
             {content.length > 1 ? (
               <UnorderedList spacing={2}>
                 {content.map((item, i) => (
-                  <ListItem key={i} fontSize="md" color="gray.300">
+                  <ListItem key={i} fontSize="md" color="gray.300" fontWeight="300">
                     {item.replace('- ', '')}
                   </ListItem>
                 ))}
               </UnorderedList>
             ) : (
-              <Text fontSize="lg" fontStyle="italic" color="gray.300">
+              <Text fontSize="lg" fontStyle="italic" color="gray.300" fontWeight="300">
                 {content[0]}
               </Text>
             )}
           </Box>
         )
       })}
+      <Box>
+        <Heading as="h5" size="md" mb={2} color="brand.300" fontWeight="100">
+          Etiquetas:
+        </Heading>
+        <Flex wrap="wrap" gap={2}>
+          {sections[sections.length - 1].split('\n')[1].split(', ').map((tag, index) => (
+            <Badge key={index} colorScheme="blue" fontWeight="300">
+              {tag}
+            </Badge>
+          ))}
+        </Flex>
+      </Box>
     </VStack>
   )
 }

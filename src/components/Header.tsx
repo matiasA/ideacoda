@@ -2,12 +2,12 @@ import { Box, Heading, Container, Text } from '@chakra-ui/react'
 
 export default function Header() {
   return (
-    <Box bg="brand.500" color="white" py={8} shadow="md">
+    <Box bg="gray.900" color="white" py={12} borderBottom="1px solid" borderColor="gray.800">
       <Container maxW="container.xl">
-        <Heading as="h1" size="2xl" fontWeight="bold" mb={2}>
+        <Heading as="h1" size="3xl" fontWeight="100" mb={4} color="brand.300" letterSpacing="wider">
           Generador de Ideas de Negocio con IA
         </Heading>
-        <Text fontSize="xl">Transforma tus habilidades en oportunidades innovadoras</Text>
+        <Text fontSize="xl" color="gray.400" fontWeight="300">Transforma tus habilidades en oportunidades innovadoras</Text>
       </Container>
     </Box>
   )
