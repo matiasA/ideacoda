@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { generateIdea } from '../services/aiService'
 import IdeaDisplay from './IdeaDisplay'
-import { Box, Button, FormControl, FormLabel, Input, VStack, Text, useToast } from '@chakra-ui/react'
+import { Box, Button, FormControl, FormLabel, Input, VStack, Text, useToast, Heading } from '@chakra-ui/react'
 
 export default function IdeaGenerator() {
   const [skills, setSkills] = useState('')
@@ -31,6 +31,9 @@ export default function IdeaGenerator() {
 
   return (
     <Box bg="white" borderRadius="xl" shadow="xl" p={8}>
+      <Heading as="h2" size="lg" mb={6} textAlign="center">
+        Genera tu idea de negocio
+      </Heading>
       <form onSubmit={handleSubmit}>
         <VStack spacing={6}>
           <FormControl>
@@ -41,6 +44,10 @@ export default function IdeaGenerator() {
               onChange={(e) => setSkills(e.target.value)}
               placeholder="Ej: programación, diseño, marketing"
               required
+              size="lg"
+              borderColor="brand.200"
+              _hover={{ borderColor: 'brand.300' }}
+              _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px #007bff' }}
             />
           </FormControl>
           <Button
@@ -49,6 +56,7 @@ export default function IdeaGenerator() {
             size="lg"
             width="full"
             isLoading={loading}
+            loadingText="Generando..."
           >
             Generar Idea
           </Button>

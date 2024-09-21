@@ -1,4 +1,4 @@
-import { Box, Text, VStack } from '@chakra-ui/react'
+import { Box, Text, VStack, Heading } from '@chakra-ui/react'
 
 interface IdeaDisplayProps {
   idea: string
@@ -7,9 +7,13 @@ interface IdeaDisplayProps {
 export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
   return (
     <VStack mt={8} spacing={4} align="stretch">
-      <Text fontSize="xl" fontWeight="bold">Tu idea de negocio:</Text>
-      <Box bg="gray.100" p={4} borderRadius="md">
-        <Text fontSize="lg">{idea}</Text>
+      <Heading as="h3" size="md" textAlign="center">
+        Tu idea de negocio:
+      </Heading>
+      <Box bg="brand.50" p={6} borderRadius="md" borderLeft="4px solid" borderColor="brand.500">
+        <Text fontSize="lg" fontStyle="italic" color="gray.700">
+          "{idea}"
+        </Text>
       </Box>
     </VStack>
   )

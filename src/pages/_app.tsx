@@ -5,21 +5,44 @@ import '../styles/globals.css'
 const theme = extendTheme({
   colors: {
     brand: {
-      50: '#f0e4ff',
-      100: '#cbb2ff',
-      200: '#a480ff',
-      300: '#7a4dff',
-      400: '#641bfe',
-      500: '#5a01e5',
-      600: '#5200b3',
-      700: '#430082',
-      800: '#2d0051',
-      900: '#14001f',
+      50: '#e0f2ff',
+      100: '#b8dcff',
+      200: '#8ac5ff',
+      300: '#5cadff',
+      400: '#2e95ff',
+      500: '#007bff',
+      600: '#0062cc',
+      700: '#004999',
+      800: '#003166',
+      900: '#001833',
     },
   },
   fonts: {
     heading: 'Poppins, sans-serif',
     body: 'Inter, sans-serif',
+  },
+  styles: {
+    global: {
+      body: {
+        bg: 'gray.50',
+      },
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: 'bold',
+      },
+      variants: {
+        solid: (props) => ({
+          bg: `${props.colorScheme}.500`,
+          color: 'white',
+          _hover: {
+            bg: `${props.colorScheme}.600`,
+          },
+        }),
+      },
+    },
   },
 })
 
