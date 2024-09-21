@@ -1,7 +1,6 @@
-
 # 🚀 Generador de Ideas de Negocio con IA
 
-[Generador de Ideas de Negocio con IA](./assets/app.png)
+![Generador de Ideas de Negocio con IA](./assets/app.png)
 
 ## 🌟 Descripción
 
@@ -66,7 +65,7 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o realiza un pull r
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia MIT.
 
 ## 📞 Contacto
 
