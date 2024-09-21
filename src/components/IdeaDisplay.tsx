@@ -1,5 +1,6 @@
 import { Box, Text, VStack, Heading, UnorderedList, ListItem, Flex, Badge, Button, HStack, useToast } from '@chakra-ui/react'
-import { FaShare, FaSave } from 'react-icons/fa'
+import { FaShare, FaSave, FaDownload } from 'react-icons/fa'
+import jsPDF from 'jspdf'
 
 interface IdeaDisplayProps {
   idea: string
@@ -42,6 +43,58 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
     })
   }
 
+  const handleDownloadPDF = () => {
+    const pdf = new jsPDF()
+    let yOffset = 10
+
+    // Título
+    pdf.setFontSize(20)
+    pdf.setFont('helvetica', 'bold')
+    pdf.text('Idea de Negocio Generada por IA', 105, yOffset, { align: 'center' })
+    yOffset += 20
+
+    // Contenido
+    pdf.setFontSize(12)
+    pdf.setFont('helvetica', 'normal')
+    sections.forEach((section, index) => {
+      const [title, ...content] = section.split('\n')
+
+      // Título de la sección
+      pdf.setFont('helvetica', 'bold')
+      pdf.text(`${index + 1}. ${title}`, 10, yOffset)
+      yOffset += 10
+
+      // Contenido de la sección
+      pdf.setFont('helvetica', 'normal')
+      content.forEach(line => {
+        const lines = pdf.splitTextToSize(line, 180)
+        lines.forEach(splitLine => {
+          pdf.text(splitLine, 15, yOffset)
+          yOffset += 7
+        })
+      })
+
+      yOffset += 5
+
+      // Nueva página si es necesario
+      if (yOffset > 280) {
+        pdf.addPage()
+        yOffset = 10
+      }
+    })
+
+    // Guardar el PDF
+    pdf.save('idea_de_negocio.pdf')
+
+    toast({
+      title: 'PDF descargado',
+      description: 'Tu idea de negocio ha sido descargada como PDF.',
+      status: 'success',
+      duration: 3000,
+      isClosable: true,
+    })
+  }
+
   return (
     <VStack mt={12} spacing={8} align="stretch">
       <Heading as="h3" size="2xl" textAlign="center" color="brand.300" fontWeight="100" letterSpacing="wider">
@@ -53,6 +106,9 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
         </Button>
         <Button leftIcon={<FaSave />} colorScheme="green" onClick={handleSave} fontWeight="300">
           Guardar
+        </Button>
+        <Button leftIcon={<FaDownload />} colorScheme="purple" onClick={handleDownloadPDF} fontWeight="300">
+          Descargar PDF
         </Button>
       </HStack>
       {sections.map((section, index) => {
