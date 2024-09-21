@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme, ThemeComponents } from '@chakra-ui/react'
 import '../styles/globals.css'
 
 const theme = extendTheme({
@@ -53,7 +53,7 @@ const theme = extendTheme({
         transition: 'all 0.3s ease-in-out',
       },
       variants: {
-        solid: (props: any) => ({
+        solid: (props: { colorScheme: string }) => ({
           bg: `${props.colorScheme}.500`,
           color: 'white',
           _hover: {
@@ -63,7 +63,7 @@ const theme = extendTheme({
           },
         }),
       },
-    },
+    } as ThemeComponents['Button'],
     Input: {
       baseStyle: {
         field: {

@@ -68,7 +68,7 @@ export default function IdeaDisplay({ idea }: IdeaDisplayProps) {
       pdf.setFont('helvetica', 'normal')
       content.forEach(line => {
         const lines = pdf.splitTextToSize(line, 180)
-        lines.forEach(splitLine => {
+        lines.forEach((splitLine: string) => {
           pdf.text(splitLine, 15, yOffset)
           yOffset += 7
         })
