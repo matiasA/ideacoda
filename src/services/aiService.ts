@@ -1,16 +1,11 @@
-export async function generateIdea(skills: string): Promise<string> {
-  const response = await fetch('/api/generate-idea', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ skills }),
-  })
+import axios from 'axios'
 
-  if (!response.ok) {
-    throw new Error('Error al generar la idea')
+export async function generateIdeas(skills: string, industry: string, numberOfIdeas: number): Promise<string[]> {
+  try {
+    const response = await axios.post('/api/generate-idea', { skills, industry, numberOfIdeas })
+    return response.data.ideas
+  } catch (error) {
+    console.error('Error en el servicio de IA:', error)
+    throw new Error('No se pudieron generar las ideas')
   }
-
-  const data = await response.json()
-  return data.idea
 }
