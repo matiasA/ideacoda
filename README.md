@@ -69,6 +69,6 @@ Este proyecto está bajo la Licencia MIT.
 
 ## 📞 Contacto
 
-[Cristian Aracena](https://www.linkedin.com/in/matias-aracena/) - [contacto](https://www.linkedin.com/in/matias-aracena/) - info@coda.uno
+[Cristian Aracena](https://www.linkedin.com/in/matias-aracena/) - info@coda.uno
 
 Link del Proyecto: [https://github.com/matiasA/ideacoda](https://github.com/matiasA/ideacoda)
