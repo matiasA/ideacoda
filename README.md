@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Generador de Ideas de Negocio con IA
 
-## Getting Started
+![Generador de Ideas de Negocio con IA](ruta/a/tu/screenshot.png)
 
-First, run the development server:
+## 🌟 Descripción
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+El Generador de Ideas de Negocio con IA es una herramienta innovadora que utiliza inteligencia artificial para crear ideas de emprendimiento personalizadas. Basándose en las habilidades del usuario y las tendencias del mercado, nuestra aplicación genera conceptos de negocio únicos y viables.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Características
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🧠 Generación de ideas basada en IA
+- 🎨 Interfaz moderna y atractiva con modo oscuro
+- 📊 Filtros por industria y número de ideas
+- 💾 Guardado de ideas favoritas
+- 📤 Compartir ideas en redes sociales
+- 📄 Exportación de ideas a PDF
+- 🏷️ Sistema de etiquetas para categorizar ideas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologías Utilizadas
 
-## Learn More
+- Next.js
+- React
+- TypeScript
+- Chakra UI
+- OpenAI API
+- Axios
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 Cómo Empezar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clona el repositorio:
+   ```
+   git clone https://github.com/tu-usuario/generador-ideas-negocio-ia.git
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instala las dependencias:
+   ```
+   cd generador-ideas-negocio-ia
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Configura las variables de entorno:
+   Crea un archivo `.env.local` en la raíz del proyecto y añade tu clave API de OpenAI:
+   ```
+   OPENAI_API_KEY=tu_clave_api_aqui
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Inicia el servidor de desarrollo:
+   ```
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
+
+## 📈 Roadmap
+
+- [ ] Implementar sistema de votación de ideas
+- [ ] Añadir sección "Idea del día"
+- [ ] Crear galería de ideas populares
+- [ ] Implementar chatbot para preguntas frecuentes
+- [ ] Desarrollar widget "Idea del día" para sitios web externos
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor, abre un issue o realiza un pull request con tus ideas.
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
+## 📞 Contacto
+
+[Tu Nombre] - [@tu_twitter](https://twitter.com/tu_twitter) - tu_email@ejemplo.com
+
+Link del Proyecto: [https://github.com/tu-usuario/generador-ideas-negocio-ia](https://github.com/tu-usuario/generador-ideas-negocio-ia)
