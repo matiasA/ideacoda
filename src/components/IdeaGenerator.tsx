@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { generateIdea } from '../services/aiService'
 import IdeaDisplay from './IdeaDisplay'
-import { Box, Button, FormControl, FormLabel, Input, VStack, Text, useToast, Heading } from '@chakra-ui/react'
+import SavedIdeas from './SavedIdeas'
+import { Box, Button, FormControl, FormLabel, Input, VStack, useToast, Heading } from '@chakra-ui/react'
 
 export default function IdeaGenerator() {
   const [skills, setSkills] = useState('')
@@ -30,23 +31,24 @@ export default function IdeaGenerator() {
   }
 
   return (
-    <Box bg="white" borderRadius="xl" shadow="xl" p={8}>
-      <Heading as="h2" size="lg" mb={6} textAlign="center">
+    <Box bg="gray.800" borderRadius="xl" shadow="xl" p={8}>
+      <Heading as="h2" size="lg" mb={6} textAlign="center" color="brand.300">
         Genera tu idea de negocio
       </Heading>
       <form onSubmit={handleSubmit}>
         <VStack spacing={6}>
           <FormControl>
-            <FormLabel htmlFor="skills">Tus habilidades:</FormLabel>
+            <FormLabel htmlFor="skills" color="gray.300">Tus habilidades:</FormLabel>
             <Input
               id="skills"
               value={skills}
-              onChange={(e) => setSkills(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSkills(e.target.value)}
               placeholder="Ej: programación, diseño, marketing"
               required
               size="lg"
-              borderColor="brand.200"
-              _hover={{ borderColor: 'brand.300' }}
+              bg="gray.700"
+              borderColor="gray.600"
+              _hover={{ borderColor: 'brand.400' }}
               _focus={{ borderColor: 'brand.500', boxShadow: '0 0 0 1px #007bff' }}
             />
           </FormControl>
@@ -58,11 +60,12 @@ export default function IdeaGenerator() {
             isLoading={loading}
             loadingText="Generando..."
           >
-            Generar Idea
+            Generar Idea de Negocio Completa
           </Button>
         </VStack>
       </form>
       {idea && <IdeaDisplay idea={idea} />}
+      <SavedIdeas />
     </Box>
   )
 }
