@@ -1,4 +1,5 @@
-import axios from 'axios'
+// Elimina esta línea si no estás usando axios
+// import axios from 'axios'
 
 interface IdeaStructure {
   nombreNegocio: string;
