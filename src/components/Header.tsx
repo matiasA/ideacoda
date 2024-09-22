@@ -1,14 +1,18 @@
-import { Box, Heading, Container, Text } from '@chakra-ui/react'
+import React from 'react';
 
-export default function Header() {
+const Header: React.FC = () => {
   return (
-    <Box bg="gray.900" color="white" py={12} borderBottom="1px solid" borderColor="gray.800">
-      <Container maxW="container.xl">
-        <Heading as="h1" size="3xl" fontWeight="100" mb={4} color="brand.300" letterSpacing="wider">
-          Generador de Ideas de Negocio con IA
-        </Heading>
-        <Text fontSize="xl" color="gray.400" fontWeight="300">Transforma tus habilidades en oportunidades innovadoras</Text>
-      </Container>
-    </Box>
-  )
-}
+    <header className="bg-opacity-30 bg-black backdrop-blur-md p-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-white">
+          <span className="text-blue-400">AI</span> Business Idea Generator
+        </h1>
+        <nav>
+          <a href="#" className="text-gray-300 hover:text-white transition duration-300 ease-in-out">About</a>
+        </nav>
+      </div>
+    </header>
+  );
+};
+
+export default Header;

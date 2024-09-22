@@ -1,17 +1,19 @@
-import { Box, Text, Container, Link } from '@chakra-ui/react'
+import React from 'react';
 
-export default function Footer() {
+const Footer: React.FC = () => {
   return (
-    <Box bg="gray.800" color="gray.300" py={6}>
-      <Container maxW="container.xl" textAlign="center">
-        <Text>&copy; 2024 Generador de Ideas de Negocio con IA. Todos los derechos reservados.</Text>
-        <Text mt={2}>
-          Desarrollado con <span role="img" aria-label="love">❤️</span> por{' '}
-          <Link href="https://tuwebsite.com" isExternal color="brand.300">
-            Tu Nombre
-          </Link>
-        </Text>
-      </Container>
-    </Box>
-  )
-}
+    <footer className="bg-opacity-30 bg-black backdrop-blur-md p-6 mt-auto">
+      <div className="container mx-auto text-center">
+        <p className="text-gray-400">
+          © 2023 AI Business Idea Generator. All rights reserved.
+        </p>
+        <div className="mt-2">
+          <a href="#" className="text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out mx-2">Privacy Policy</a>
+          <a href="#" className="text-blue-400 hover:text-blue-300 transition duration-300 ease-in-out mx-2">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
