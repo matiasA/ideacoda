@@ -9,19 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'gradient-slow': 'gradient 15s ease infinite',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'twinkle': 'twinkle 4s ease-in-out infinite',
       },
       keyframes: {
-        gradient: {
+        'gradient-x': {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
         },
-      },
-      colors: {
-        'blue-opaque': 'rgb(13 42 148 / 18%)',
-      },
-      boxShadow: {
-        'blue-glow': '0 0 15px rgba(66, 153, 225, 0.5)',
+        'twinkle': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.5' },
+        },
       },
     },
   },
