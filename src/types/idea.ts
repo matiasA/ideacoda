@@ -7,5 +7,5 @@ export interface IdeaStructure {
   modeloNegocio: string;
   estrategiaMarketing: string;
   proximosPasos: string;
-  etiquetas: string[];
+  etiquetas?: string[];
 }
