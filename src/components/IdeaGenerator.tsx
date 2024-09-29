@@ -46,11 +46,10 @@ export default function IdeaGenerator() {
   }
 
   const saveIdea = (idea: IdeaStructure) => {
-    const savedIdea = {
-      nombreNegocio: idea.nombreNegocio,
-      descripcionBreve: idea.descripcionBreve,
-      etiquetas: idea.etiquetas
-    } as IdeaStructure;
+    const savedIdea: IdeaStructure = {
+      ...idea,
+      etiquetas: idea.etiquetas || [] // Aseguramos que siempre sea un array
+    };
     const updatedSavedIdeas = [...savedIdeas, savedIdea];
     setSavedIdeas(updatedSavedIdeas);
     localStorage.setItem('savedIdeas', JSON.stringify(updatedSavedIdeas));
@@ -65,7 +64,11 @@ export default function IdeaGenerator() {
         {ideas.length > 0 ? (
           <div className="space-y-4 md:space-y-8">
             {ideas.map((idea, index) => (
-              <IdeaDisplay key={index} idea={idea} onSave={() => saveIdea(idea)} />
+              <IdeaDisplay 
+                key={index} 
+                idea={{...idea, etiquetas: idea.etiquetas || []}} 
+                onSave={() => saveIdea(idea)} 
+              />
             ))}
           </div>
         ) : (
